@@ -144,6 +144,8 @@ class DoctorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $doctor = Doctor::find($id);
+        $doctor->delete();
+        return redirect('/doctors');
     }
 }

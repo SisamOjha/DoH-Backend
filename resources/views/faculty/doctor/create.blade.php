@@ -5,7 +5,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <a href="/doctors" class="btn btn-primary btn-sm">Back</a>
+                        <a href="/doctors" class="btn btn-primary btn-sm-float-right" style="background-color: #030731 !important">Back to Doctor Management</a>
                     </div>
                     <div class="card-body">
                         <form action="/doctors" method="post" enctype="multipart/form-data">
@@ -24,7 +24,7 @@
                                 <label for="images">Other Images</label>
                                 <input id="images" class="form-control-file" type="file" name="images[]" multiple>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-sm float-right">Save</button>
+                            <button type="submit" class="btn btn-primary btn-sm float-right"  style="background-color: #030731 !important">Save</button>
                         </form>
                     </div>
                 </div>

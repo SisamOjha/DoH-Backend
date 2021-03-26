@@ -27,5 +27,6 @@ Route::resource('hospitals', HospitalController::class);
 
 Route::group(['middleware'=>['auth:sanctum']],function(){
     Route::resource('doctors', DoctorController::class);
-    Route::resource('productimages', ProductImagesController::class);
+
+    // Route::resource('hospitalimages', HospitalImageController::class);
 });

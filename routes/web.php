@@ -3,6 +3,7 @@
 use App\Http\Controllers\HospitalController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -31,3 +32,4 @@ Route::resource('hospitals',HospitalController::class);
 Route::resource('doctors',DoctorController::class);
 Route::resource('messages',MessageController::class);
 Route::resource('profile', ProfileController::class);
+Route::resource('faq', FaqController::class);

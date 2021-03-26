@@ -45,7 +45,7 @@
                                             </span>
                                         </td>
 
-                                        <td><a href="/hospitals/{{ $hospital->id }}/edit">Edit</a></td>
+                                        <td><a href="/hospitals/{{ $hospital->id }}/edit" class="btn btn-primary btn-sm" style="background-color: #030731 !important">Edit</a></td>
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -50,7 +50,7 @@
                                         <td>
                                             <div class="row">
                                             <div class="col">
-                                                <a href="Faq/{{ $faq->id }}/edit" class="btn btn-primary btn-sm" style="background-color: #8b4f52 !important">Edit</a>
+                                                <a href="Faq/{{ $faq->id }}/edit" class="btn btn-primary btn-sm" style="background-color: #030731 !important">Edit</a>
                                             </div>
                                             <div class="col">
                                                 <a href="Faq/{{ $faq->id }}" class="btn btn-info btn-sm">Show</a>
@@ -59,7 +59,7 @@
                                             <form action="Faq/{{ $faq->id }}" method="post">
                                                 @csrf
                                                 @method('delete')
-                                                <button type="submit" class="btn btn-danger btn-sm" style="background-color: #990008 !important">Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" style="background-color: #030731 !important">Delete</button>
                                             </form>
                                             </div>
                                         </td>
