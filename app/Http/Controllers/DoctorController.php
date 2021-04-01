@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
+use App\Models\Specialist;
 use App\Models\DoctorImage;
 use Illuminate\Http\Request;
 
@@ -27,8 +28,8 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        $doctors = Doctor::all();
-        return view('faculty.Doctor.create',compact('doctors'));
+        $specialists = Specialist::all();
+        return view('faculty.Doctor.create',compact('specialists'));
     }
 
     /**
@@ -40,7 +41,19 @@ class DoctorController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'telephone'=> 'required',
+            'country'=> 'required',
+            'zone'=> 'required',
+            'district'=> 'required',
+            'city'=> 'required',
+            'ward'=> 'required',
+            'province'=> 'required',
+            'mobile'=> 'required',
+            'lat'=> 'required',
+            'lon'=> 'required',
+            'description'=> 'required'
+
         ]);
 
         $doctor = new Doctor();
@@ -51,6 +64,18 @@ class DoctorController extends Controller
             $file->move('uploadedFiles', $newName);
             $doctor->image =  $newName;
         }
+        $doctor->specialist_id = $request->specialist_id;
+        $doctor->telephone = $request->telepone;
+        $doctor->country = $request->country;
+        $doctor->zone = $request->zone;
+        $doctor->district = $request->district;
+        $doctor->city = $request->city;
+        $doctor->ward = $request->ward;
+        $doctor->province = $request->province;
+        $doctor->lat = $request->lat;
+        $doctor->lon = $request->lon;
+        $doctor->description = $request->description;
+
 
         $doctor->save();
         if($request->hasFile('images')){
@@ -64,7 +89,7 @@ class DoctorController extends Controller
             }
 
 
-        return redirect()->back()->with('success','Doctor successfully added.');
+        return redirect()->back()->with('success','Doctor details successfully added.');
    }
 }
 
@@ -78,7 +103,9 @@ class DoctorController extends Controller
      */
     public function show($id)
     {
-        //
+        $doctors = Doctor::find($id);
+
+        return view('faculty.Doctor.show', compact('doctors'));
     }
 
     /**
@@ -89,9 +116,9 @@ class DoctorController extends Controller
      */
     public function edit($id)
     {
-        $doctor =  Doctor::find($id);
-        $doctorImage = DoctorImage::where('doctor_id',$id)->get();
-        return view('faculty.doctor.edit',compact('doctors','doctorImage'));
+        $specialists =  Specialist::find($id);
+        $doctorImage = DoctorImage::where('doctor_id', $id)->get();
+        return view('faculty.Doctor.edit',compact('doctor','specialists','doctorImage'));
     }
 
     /**
@@ -104,19 +131,42 @@ class DoctorController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'telephone'=> 'required',
+            'country'=> 'required',
+            'zone'=> 'required',
+            'district'=> 'required',
+            'city'=> 'required',
+            'ward'=> 'required',
+            'province'=> 'required',
+            'mobile'=> 'required',
+            'lat'=> 'required',
+            'lon'=> 'required',
+            'description'=> 'required'
         ]);
 
         $doctor = Doctor::find($id);
         $doctor->name = $request->name;
-        $doctor->update();
-
         if ($request->hasFile('image')) {
             $file = $request->image;
             $newName = time() . $file->getClientOriginalName();
             $file->move('uploadedFiles', $newName);
             $doctor->image =  $newName;
         }
+        $doctor->specialist_id = $request->specialist_id;
+        $doctor->telephone = $request->telepone;
+        $doctor->country = $request->country;
+        $doctor->zone = $request->zone;
+        $doctor->district = $request->district;
+        $doctor->city = $request->city;
+        $doctor->ward = $request->ward;
+        $doctor->province = $request->province;
+        $doctor->lat = $request->lat;
+        $doctor->lon = $request->lon;
+        $doctor->description = $request->description;
+        $doctor->update();
+
+
         $doctor->update();
         // We need to save product first so that we can get product ID for Product Image Table
 

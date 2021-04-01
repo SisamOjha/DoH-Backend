@@ -228,7 +228,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           <li class="nav-item">
             <a href="/messages" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
+              <i class="nav-icon fas fa-comment"></i>
               <p>
                Message
               </p>
@@ -239,6 +239,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <i class="nav-icon fas fa-user"></i>
               <p>
                Faq
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/specialists" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+               Specialist
               </p>
             </a>
           </li>

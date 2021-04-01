@@ -85,7 +85,7 @@ class HospitalController extends Controller
      */
     public function edit($id)
     {
-        $hospital =  Hospital::find($id);
+        $hospitals =  Hospital::find($id);
         $hospitalImage = HospitalImage::where('hospital_id',$id)->get();
         return view('faculty.hospital.edit',compact('hospitals','hospitalImage'));
     }
@@ -138,6 +138,8 @@ class HospitalController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $hospital = Hospital::find($id);
+        $hospital->delete();
+        return redirect('/hospitals');
     }
 }

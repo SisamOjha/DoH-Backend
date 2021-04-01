@@ -8,12 +8,10 @@
                         <div class="row align-items-center">
                             <div class="col-8">
                                 <h3 class="mb-0">FAQ</h3>
-                                <p class="text-sm mb-0">
-                                    This is an example of faq management.
-                                </p>
+
                             </div>
                                 <div class="col-4 text-right">
-                                    <a href="/Faq/create" class="btn btn-primary btn-sm" style="background-color: #990008 !important">Create FAQ</a>
+                                    <a href="/faq/create" class="btn btn-primary btn-sm" style="background-color: #030713 !important">Add FAQ</a>
                                 </div>
                         </div>
 
@@ -50,13 +48,13 @@
                                         <td>
                                             <div class="row">
                                             <div class="col">
-                                                <a href="Faq/{{ $faq->id }}/edit" class="btn btn-primary btn-sm" style="background-color: #030731 !important">Edit</a>
+                                                <a href="faq/{{ $faq->id }}/edit" class="btn btn-primary btn-sm" style="background-color: #030731 !important">Edit</a>
                                             </div>
                                             <div class="col">
-                                                <a href="Faq/{{ $faq->id }}" class="btn btn-info btn-sm">Show</a>
+                                                <a href="faq/{{ $faq->id }}" class="btn btn-info btn-sm">Show</a>
                                             </div>
                                             <div class="col">
-                                            <form action="Faq/{{ $faq->id }}" method="post">
+                                            <form action="faq/{{ $faq->id }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="submit" class="btn btn-danger btn-sm" style="background-color: #030731 !important">Delete</button>

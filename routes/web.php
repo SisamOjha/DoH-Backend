@@ -5,6 +5,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SpecialistController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -33,3 +34,5 @@ Route::resource('doctors',DoctorController::class);
 Route::resource('messages',MessageController::class);
 Route::resource('profile', ProfileController::class);
 Route::resource('faq', FaqController::class);
+Route::resource('specialists', SpecialistController::class);
+

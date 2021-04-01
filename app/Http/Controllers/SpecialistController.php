@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Specialist;
 use Illuminate\Http\Request;
 
 class SpecialistController extends Controller
@@ -13,7 +14,8 @@ class SpecialistController extends Controller
      */
     public function index()
     {
-        //
+        $specialists = Specialist::all();
+        return view('faculty.specialist.index', compact('specialists'));
     }
 
     /**
@@ -23,7 +25,8 @@ class SpecialistController extends Controller
      */
     public function create()
     {
-        //
+        $specialists = Specialist::all();
+        return view('faculty.specialist.create',compact('specialists'));
     }
 
     /**
@@ -34,7 +37,10 @@ class SpecialistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $specialists = new Specialist();
+        $specialists->name = $request->name;
+     $specialists->save();
+     return redirect()->back();
     }
 
     /**
@@ -45,7 +51,9 @@ class SpecialistController extends Controller
      */
     public function show($id)
     {
-        //
+        $specialists = Specialist::find($id);
+
+        return view('faculty.specialist.show', compact('specialists'));
     }
 
     /**
@@ -56,7 +64,8 @@ class SpecialistController extends Controller
      */
     public function edit($id)
     {
-        //
+        $specialists = Specialist::find($id);
+        return view('faculty.specialist.edit',compact('specialists'));
     }
 
     /**
@@ -68,7 +77,13 @@ class SpecialistController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required'
+        ]);
+        $specialists = Specialist::find($id);
+        $specialists->name = $request->name;
+        $specialists->update();
+        return redirect()->back();
     }
 
     /**
@@ -79,6 +94,8 @@ class SpecialistController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $specialists = Specialist::find($id);
+        $specialists->delete();
+        return redirect('/specialists');
     }
 }

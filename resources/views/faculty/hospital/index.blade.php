@@ -3,7 +3,7 @@
 <div class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-20">
 
                 <div class="card">
                     <div class="card-header">
@@ -45,7 +45,23 @@
                                             </span>
                                         </td>
 
-                                        <td><a href="/hospitals/{{ $hospital->id }}/edit" class="btn btn-primary btn-sm" style="background-color: #030731 !important">Edit</a></td>
+                                        <td>
+                                            <div class="col">
+                                            <a href="/hospitals/{{ $hospital->id }}/edit" class="btn btn-primary btn-sm" style="background-color: #030731 !important">Edit</a>
+                                            </div>
+                                            <div class="col">
+                                                <a href="/hospitals/{{ $hospital->id }}" class="btn btn-primary btn-sm" >Show</a>
+
+                                            </div>
+                                            <div class="col">
+                                                <form action="/hospitals/{{ $hospital->id }}" method="post">
+                                                  @csrf
+                                                  @method('delete')
+
+                                                  <button type="submit" class="btn btn-primary btn-sm" style="background-color: #990008 !important">Delete</button>
+                                               </form>
+                                            </div>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

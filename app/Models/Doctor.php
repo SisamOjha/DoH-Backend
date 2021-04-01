@@ -12,4 +12,13 @@ class Doctor extends Model
     {
     return $this->hasMany(Hospital::class);
    }
+   public function specialist()
+    {
+    return $this->belongsTo(specialist::class);
+   }
+   public function images()
+   {
+   return $this->hasMany(DoctorImage::class);
+  }
+
 }

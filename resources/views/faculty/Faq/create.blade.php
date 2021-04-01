@@ -8,17 +8,15 @@
                         <div class="row align-items-center">
                             <div class="col-12">
                                 <h3 class="mb-0">FAQ</h3>
-                                <p class="text-sm mb-0">
-                                    This is an example of faq management.
-                                </p>
+
                             </div>
-                                                                <div class="col-12 text-right">
-                                  <a href="/faqs" class="btn btn-primary btn-sm" style="background-color: #990008 !important">Back to FAQ</a>
+                                <div class="col-12 text-right">
+                                  <a href="/faqs" class="btn btn-primary btn-sm" style="background-color: #030713 !important">Back to FAQ</a>
                                 </div>
                         </div>
                     </div>
                     <div class="card-body">
-                        <form action="/faqs" method="post" enctype="multipart/form-data">
+                        <form action="/faq" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="question">Question</label>
@@ -32,7 +30,7 @@
                                 <label for="image">Upload</label>
                                 <input type="file" class="form-control" name="image" accept="image/*">
                             </div> --}}
-                            <button type="submit" class="btn btn-primary btn-sm float-right" style="background-color: #990008 !important">Save</button>
+                            <button type="submit" class="btn btn-primary btn-sm float-right" style="background-color: #030713 !important">Save</button>
                         </form>
                     </div>
                 </div>

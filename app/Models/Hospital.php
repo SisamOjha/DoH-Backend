@@ -13,4 +13,8 @@ class Hospital extends Model
      {
      return $this->hasMany(Doctor::class);
     }
+    public function images()
+   {
+   return $this->hasMany(HospitalImage::class);
+  }
 }

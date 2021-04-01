@@ -10,6 +10,6 @@ class HospitalImage extends Model
     use HasFactory;
     public function hospital()
     {
-        return $this->belongsTo(HospitalController::class);
+        return $this->belongsTo(Hospital::class);
     }
 }

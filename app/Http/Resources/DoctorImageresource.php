@@ -16,7 +16,7 @@ class DoctorImageresource extends JsonResource
     {
         //return parent::toArray($request);
         return [
-            'name' => '192.168.100.210:8000/'.$this->name,
+            'name' => 'http://192.168.100.210:8000/'.$this->name,
         ];
     }
 }
